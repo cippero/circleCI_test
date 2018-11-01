@@ -20,12 +20,12 @@ ShallowWrapper {
       "children": Array [
         <h1
           className="f1"
->
+        >
           RoboFriends
-</h1>,
+        </h1>,
         <CounterButton
           color="blue"
-/>,
+        />,
       ],
     },
     "ref": null,
@@ -65,12 +65,12 @@ ShallowWrapper {
         "children": Array [
           <h1
             className="f1"
->
+          >
             RoboFriends
-</h1>,
+          </h1>,
           <CounterButton
             color="blue"
-/>,
+          />,
         ],
       },
       "ref": null,

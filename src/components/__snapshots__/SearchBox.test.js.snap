@@ -20,10 +20,9 @@ ShallowWrapper {
       "children": <input
         aria-label="Search robots"
         className="pa3 ba b--green bg-lightest-blue"
-        onChange={undefined}
         placeholder="search robots"
         type="search"
-/>,
+      />,
       "className": "pa2",
     },
     "ref": null,
@@ -53,10 +52,9 @@ ShallowWrapper {
         "children": <input
           aria-label="Search robots"
           className="pa3 ba b--green bg-lightest-blue"
-          onChange={undefined}
           placeholder="search robots"
           type="search"
-/>,
+        />,
         "className": "pa2",
       },
       "ref": null,
