@@ -1,20 +1,54 @@
+# version: 2
+# jobs:
+#   build1_bobby:
+#     docker:
+#       - image: circleci/node:7.10
+#     steps:
+#       - checkout
+#       - run: echo "Hello World"
+#   build2_sally:
+#     docker:
+#       - image: circleci/node:7.10
+#     steps:
+#       - checkout
+#       - run: echo "Double trouble"
+# workflows:
+#   version: 2
+#   bobby_sally:
+#     jobs:
+#       - build1_bobby
+#       - build2_sally
+
 version: 2
 jobs:
-  build1_bobby:
+  build:
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:8.9
     steps:
       - checkout
-      - run: echo "Hello World"
-  build2_sally:
+      - run: echo "NPM installing"
+      - run: npm install
+      - run: CI=true npm run build
+  test:
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:8.9
     steps:
       - checkout
-      - run: echo "Double trouble"
+      - run: echo "testing the code"
+      - run: npm install
+      - run: npm test
+  hithere:
+    docker:
+      - image: circleci/node:8.9
+    steps:
+      - checkout
+      - echo "helloooooooooo"
 workflows:
   version: 2
-  bobby_sally:
+  build_test_and_lint:
     jobs:
-      - build1_bobby
-      - build2_sally
+      - build
+      - hithere
+      - test:
+          requires:
+          - hithere
